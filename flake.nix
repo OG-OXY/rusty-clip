@@ -19,8 +19,8 @@
           wantedBy = [ "graphical-session.target" ];
           partOf = [ "graphical-session.target" ];
           serviceConfig = {
-            ExecStart = "${self.packages.${pkgs.system}.default}/bin/rusty-clip --daemon";
-            Restart = "always";
+            ExecStart = "${self.packages.${pkgs.system}.default}/bin/rusty-clip daemon";
+            Restart = "on-failure";
             RestartSec = "1";
           };
         };
