@@ -1,0 +1,8 @@
+[package]
+name = "rusty-clip"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+arboard = { version = "3.4", features = ["wayland-data-control"] }
+clap = { version = "4.4", features = ["derive"] }
