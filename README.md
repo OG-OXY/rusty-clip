@@ -24,7 +24,7 @@ vim.g.clipboard = {
     ['*'] = 'rusty-clip',
   },
   paste = {
-    -- Assuming you have a paste mechanism or use wl-paste (which can also be shimmed)
+    -- Uses regular wl-paste since only copy is the issue.
     ['+'] = 'wl-paste --no-newline',
     ['*'] = 'wl-paste --no-newline',
   },
