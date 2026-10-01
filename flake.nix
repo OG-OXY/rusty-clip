@@ -20,7 +20,6 @@
           
           postInstall = ''
             ln -s $out/bin/rusty-clip $out/bin/wl-copy
-            # ln -s $out/bin/rusty-clip $out/bin/wl-paste
           '';
         };
       });
