@@ -9,7 +9,7 @@
   outputs = { self, nixpkgs, flake-utils }:
     let
       # Defined reusable module that configures the systemd service automatically
-      sharedModule = { config, lib, pkgs, ... }: {
+      sharedModule = { pkgs, ... }: {
         # Automatically install the package when the module is enabled
         environment.systemPackages = [ self.packages.${pkgs.system}.default ];
 
@@ -20,7 +20,7 @@
           partOf = [ "graphical-session.target" ];
           serviceConfig = {
             ExecStart = "${self.packages.${pkgs.system}.default}/bin/rusty-clip daemon";
-            Restart = "on-failure";
+            Restart = "always";
             RestartSec = "1";
           };
         };
